@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌟 Personal Portfolio & Blog Project
 
-## Getting Started
+A modern, responsive **personal portfolio website** built with **Next.js**, featuring a landing page, blog functionality, and detailed project showcase. The project also includes a secure **admin panel**, rate-limiting, and enhanced middleware security.
 
-First, run the development server:
+---
 
+## 🛠️ Features
+
+### **Frontend**
+- **Landing Page** – Fully responsive design showcasing personal information and skills.
+- **Projects Section** – Display projects with descriptions, tech stack, and links.
+- **Blog Section** – Add and manage blogs easily with markdown support.
+- **Admin Dashboard** – Manage blogs, projects, and analytics.
+
+### **Backend / Middleware**
+- **Rate Limiting** – Protects against abuse by limiting requests per IP (`10,000 requests per minute`).
+- **Protected Routes** – Admin paths (`/admin`, `/admin/dashboard`, `/admin/blogs`, `/admin/analytics`) are secured.
+- **Public Routes** – Landing page and login paths are publicly accessible.
+- **Security Headers** – Includes:
+  - `Content-Security-Policy` with nonce for scripts/styles
+  - `X-DNS-Prefetch-Control`
+  - `Strict-Transport-Security`
+  - `X-XSS-Protection`
+  - `X-Frame-Options`
+  - `X-Content-Type-Options`
+  - `Referrer-Policy`
+  - `Permissions-Policy`
+- **IP Detection** – Supports `x-forwarded-for` and `x-real-ip` headers for accurate client IP tracking.
+- **Middleware** – Handles redirection to `/auth/login` for protected paths.
+
+### **Integration**
+- **Upstash Redis** – For rate-limiting and request tracking.
+- **Appwrite** – Optional integration for backend services (authentication, database, storage).
+
+---
+
+## 🗂️ Project Structure (Key Files)
+
+| File | Purpose |
+|------|---------|
+| `content.ts` | Landing page & blog content configuration |
+| `appwrite.ts` | Appwrite integration & project changes |
+| `constant.ts` | Common constants for the project |
+| `gsap.ts` | GSAP animations for interactive UI |
+| `motion.ts` | Motion configuration for animations |
+| `publicApiAuth.ts` | Public API authentication helpers |
+| `sanitier.ts` | Input sanitization & validation |
+| `testsitemap.ts` | Sitemap testing and generation |
+| `middleware.ts` | Security, rate-limiting, and protected route handling |
+
+---
+
+## ⚡ Tech Stack
+- **Frontend:** Next.js, React, Tailwind CSS, GSAP  
+- **Backend:** Node.js, Appwrite (optional)  
+- **Database:** Appwrite DB / MongoDB  
+- **Cache/Rate Limiting:** Upstash Redis  
+- **Security:** Middleware with CSP, secure headers, and route protection  
+
+---
+
+## 🚀 Getting Started
+
+### **1. Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/amarkumar55/your-portfolio.git
+cd your-portfolio
