@@ -43,12 +43,12 @@ export default function Home() {
           <About />
           <Speciality />
           <TechStack />
-          <Services />
+         {/*<Services />*/}
           <Work />
           <Projects projects={projects} />
           <WorkExperience />
           <Blogs blogPosts={blogs} />
-          <Testimonials />
+          {/*<Testimonials />*/}
           <Contact />
           <Newsletter />
         </div>
